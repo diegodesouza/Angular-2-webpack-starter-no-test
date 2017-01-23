@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "__comment": "transpiliOnly: false => disabling type checking for now",
+  "awesomeTypescriptLoaderOptions": {
+    "transpileOnly": false,
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}
