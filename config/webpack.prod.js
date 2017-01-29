@@ -56,19 +56,22 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].[hash].chunk.js'
   },
 
-  /**
-   * Html loader advanced options
-   *
-   * See: https://github.com/webpack/html-loader#advanced-options
-   */
-  // TODO: Need to workaround Angular 2's html syntax => #id [bind] (event) *ngFor
-  htmlLoader: {
-    minimize: false // workaround for ng2
-  },
-
   plugins: [
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
+
+    /**
+     * Html loader advanced options
+     *
+     * See: https://github.com/webpack/html-loader#advanced-options
+     */
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        htmlLoader: {
+          minimize: false
+        }
+      }
+    }),
 
     /**
      * Plugin: UglifyJsPlugin
